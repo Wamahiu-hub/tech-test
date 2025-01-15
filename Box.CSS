@@ -1,4 +1,4 @@
-
+/* RESET */
 .container1{
     height: 550px;
     display: inline block;
@@ -33,6 +33,12 @@ h2{
 }
 h1{
     font-size: 35px;
+}
+h3{
+    color: blue;
+}
+h4{
+    padding-left: 10px;
 }
 
 ul li a:hover{
