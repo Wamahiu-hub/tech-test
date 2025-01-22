@@ -105,7 +105,61 @@
 //}
 
 
-let userName= "BroCode  "
+//let userName= "BroCode"
 
 
-console.log(userName.toUpperCa  se());
+//console.log(userName.toUpperCase());
+
+//let phoneNumber = "123-456-7890"
+//phoneNumber = phoneNumber.padEnd(20,("0"))
+//console.log(phoneNumber)
+
+//const temp = 30.1
+
+//if (temp <=0 || temp <=30 ){
+//  console.log("The weather is Good")
+//}
+//else{
+  //console.log("The weather is Bad")
+//}
+
+//let loggedIn = false;
+//let username;
+//let password;
+
+//while(!loggedIn){
+ // username = window.prompt(`Please enter your username`);
+  //password = window.prompt(`please enter your password`);
+
+  //if(username === "myUsername" && password === "myPassword"){
+   //   loggedIn = true;
+   //   console.log(`You are logged in`);
+ // }
+  //else{
+  //    console.log("Invalid credentials! Please try again");
+ //   }
+
+//}
+
+
+const textBox = document.getElementById("textBox")
+const toFahrenheit = document.getElementById("toFahrenheit")
+const toCelcius = document.getElementById("toCelcius")
+const result = document.getElementById("result")
+let temp;
+
+function Convert (){
+if (toFahrenheit.checked){
+  temp = Number(textBox.value);
+  temp = temp*9/5+32;
+  result.textContent=temp + ("°F");
+}
+else if(toCelcius.checked){
+  temp = Number(textBox.value);
+  temp = (temp-32)*(5/9);
+  result.textContent=temp + ("°C")
+}
+else{
+  result.textContent="Select a unit";
+}
+}
