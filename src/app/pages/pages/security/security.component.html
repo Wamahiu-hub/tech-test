@@ -1,0 +1,9 @@
+<div class="security-container">
+    <h2>Security Overview</h2>
+    <ul>
+      <li *ngFor="let metric of securityMetrics">
+        <strong>{{ metric.title }}:</strong> {{ metric.value }}
+      </li>
+    </ul>
+  </div>
+  

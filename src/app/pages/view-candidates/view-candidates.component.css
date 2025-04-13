@@ -1,0 +1,34 @@
+.candidates-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+  
+  .candidate-card {
+    background: #f3f3f3;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .nav-buttons {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-buttons button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-buttons button:hover {
+    background-color: #0056b3;
+  }
+  

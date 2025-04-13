@@ -1,0 +1,109 @@
+.portal-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf9ff;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: white;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar li.active,
+  .sidebar li:hover {
+    background-color: #e6ffe6;
+    font-weight: bold;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .top-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .top-stats div {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  }
+  
+  .top-stats h3 {
+    margin: 0.25rem 0;
+    color: #222;
+  }
+  
+  .top-stats small {
+    color: green;
+  }
+  
+  .content-cards {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+  
+  .recent-postings, .candidates-placeholder,
+  .ai-chat-card, .interviews-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  }
+  
+  .recent-postings ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recent-postings li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .recent-postings span {
+    float: right;
+    color: green;
+  }
+  
+  .placeholder {
+    height: 150px;
+    background-color: #f6efff;
+    border-radius: 10px;
+  }
+  
+  .ai-chat-card, .interviews-card {
+    grid-column: span 1;
+  }
+  

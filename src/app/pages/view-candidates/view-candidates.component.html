@@ -1,0 +1,15 @@
+<div class="candidates-container">
+    <h2>Candidate Applications</h2>
+
+    <div class="nav-buttons">
+        <button (click)="goToDashboard()">← Back to Dashboard</button>
+        <button (click)="goHome()">🏠 Go to Home</button>
+      </div>
+
+    <div *ngFor="let candidate of candidates" class="candidate-card">
+      <h3>{{ candidate.name }}</h3>
+      <p><strong>Email:</strong> {{ candidate.email }}</p>
+      <p><strong>Skills:</strong> {{ candidate.skills }}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,74 @@
+<div class="user-management-container">
+    <div class="header-bar">
+      <h2>User Management</h2>
+      <button (click)="addNewUser()">Add New User</button>
+    </div>
+  
+    <div class="search-bar">
+      <input type="text" placeholder="Search users..." />
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Last Login</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <span [ngClass]="{ 'active-status': user.status === 'Active', 'inactive-status': user.status !== 'Active' }">
+              {{ user.status }}
+            </span>
+          </td>
+          <td>{{ user.lastLogin }}</td>
+          <td>
+            <a (click)="onEdit(user)">Edit</a> |
+            <a (click)="onDelete(user)">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal for adding a new user -->
+  <div class="modal" *ngIf="showAddUserModal">
+    <div class="modal-content">
+      <h3>Add New User</h3>
+      <form (ngSubmit)="submitNewUser()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" [(ngModel)]="newUser.name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" [(ngModel)]="newUser.email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select id="role" [(ngModel)]="newUser.role" name="role" required>
+            <option value="Admin">Admin</option>
+            <option value="Editor">Editor</option>
+            <option value="Viewer">Viewer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select id="status" [(ngModel)]="newUser.status" name="status" required>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+        <button type="submit">Add User</button>
+        <button type="button" (click)="closeAddUserModal()">Cancel</button>
+      </form>
+    </div>
+  </div>

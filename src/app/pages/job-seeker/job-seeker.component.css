@@ -1,0 +1,101 @@
+.job-search-container {
+    padding: 40px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .search-bar {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .search-button {
+    background-color: #28c733;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .job-content {
+    display: flex;
+    margin-top: 30px;
+  }
+  
+  .filter {
+    width: 250px;
+    padding-right: 20px;
+  }
+  
+  .filter-section {
+    margin-bottom: 20px;
+  }
+  
+  .jobs-list {
+    flex: 1;
+    display: grid;
+    gap: 20px;
+  }
+  
+  .job-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 4px solid #28c733;
+    border-radius: 6px;
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .full-time-badge {
+    background: #28c733;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  
+  .salary,
+  .company {
+    margin: 8px 0;
+  }
+  
+  .job-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .view-btn {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .apply-btn {
+    padding: 6px 12px;
+    background: #28c733;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .view-more {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .view-more a {
+    color: #28c733;
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,129 @@
+.home-container {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+  
+  /* HEADER */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #00c776; /* your brand color */
+  }
+  
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .profile-btn {
+    background-color: #0d8b72;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  
+  .hero-text {
+    flex: 1;
+    margin-right: 2rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .search-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+  
+  .search-bar button {
+    background-color: #00c776;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  /* HERO IMAGE */
+  .hero-image img {
+    max-width: 500px;
+    border-radius: 8px;
+  }
+  
+  /* FILTERED JOBS SECTION */
+  .filtered-jobs {
+    margin-top: 3rem;
+  }
+  
+  .jobs-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .job-card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 4px;
+    flex: 1 1 300px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .job-card h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .job-card p {
+    color: #555;
+  }
+  
+  .job-card button {
+    background-color: #0d8b72;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  

@@ -1,0 +1,73 @@
+<div class="job-search-container">
+    <h1>Job Search</h1>
+    <p>Search for your desired job matching your skills</p>
+  
+    <div class="search-bar">
+      <input type="text" placeholder="🔍 Enter Job title" />
+      <input type="text" placeholder="📍 Enter location" />
+      <input type="text" placeholder="💼 Years of experience" />
+      <button class="search-button">Search</button>
+    </div>
+  
+    <div class="job-content">
+      <aside class="filter">
+        <h4>Filter</h4>
+        <div class="filter-section">
+          <label>Salary Range</label>
+          <input placeholder="Min" />
+          <input placeholder="Max" />
+        </div>
+  
+        <div class="filter-section">
+          <label>Job Type</label>
+          <div><input type="checkbox" checked /> All (2567)</div>
+          <div><input type="checkbox" /> Full-Time (450)</div>
+          <div><input type="checkbox" /> Part-Time (145)</div>
+          <div><input type="checkbox" /> Internship (65)</div>
+          <div><input type="checkbox" /> Contract (2)</div>
+        </div>
+  
+        <div class="filter-section">
+          <label>Work Mode</label>
+          <div><input type="checkbox" /> On-Site</div>
+          <div><input type="checkbox" /> Remote</div>
+          <div><input type="checkbox" /> Hybrid</div>
+        </div>
+  
+        <div class="filter-section">
+          <label>Experience Level</label>
+          <div><input type="checkbox" /> Fresher (265)</div>
+          <div><input type="checkbox" /> Junior (2)</div>
+          <div><input type="checkbox" /> Mid-Level (212)</div>
+          <div><input type="checkbox" /> Senior (12)</div>
+          <div><input type="checkbox" /> Lead (24)</div>
+          <div><input type="checkbox" /> Director (10)</div>
+        </div>
+      </aside>
+  
+      <main class="jobs-list">
+        <div class="job-card">
+          <div class="job-header">
+            <strong>Senior UI/UX Designer</strong>
+            <span class="full-time-badge">FULL-TIME</span>
+          </div>
+          <p class="salary">Salary: ksh30,000 – ksh55,000</p>
+          <p class="company">Apple - Mombasa, Kenya</p>
+          <div class="job-actions">
+            <button class="view-btn">View details</button>
+            <a routerLink="/job-application">
+                <button class="apply-btn">Apply now</button>
+              </a>
+              
+          </div>
+        </div>
+  
+        <!-- Duplicate this card for multiple jobs -->
+      </main>
+    </div>
+    <button class="apply-btn" routerLink="/job-application">Apply now</button>
+    <div class="view-more">
+      <a href="#">View more</a>
+    </div>
+  </div>
+  

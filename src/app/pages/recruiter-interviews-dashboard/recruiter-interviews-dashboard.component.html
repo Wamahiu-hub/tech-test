@@ -1,0 +1,31 @@
+<div class="interview-dashboard">
+    <h2>Interviews Dashboard</h2>
+  
+    <div class="candidates-container">
+      <div class="candidate-card" *ngFor="let candidate of candidates">
+        <div class="candidate-header">
+          <img src="https://via.placeholder.com/100" alt="Candidate image">
+          <div class="candidate-info">
+            <h4>{{ candidate.name }}</h4>
+            <p>{{ candidate.title }}</p>
+            <p>Previous: {{ candidate.previousCompany }}</p>
+            <span class="shortlisted-tag">Shortlisted</span>
+          </div>
+        </div>
+  
+        <div class="skills">
+          <p><strong>Skills</strong></p>
+          <div class="tags">
+            <span *ngFor="let skill of candidate.skills">{{ skill }}</span>
+          </div>
+        </div>
+  
+        <p class="experience">
+          <strong>Experience:</strong> {{ candidate.experience }} years
+        </p>
+  
+        <button (click)="scheduleInterview(candidate)">Schedule Interview</button>
+      </div>
+    </div>
+  </div>
+  

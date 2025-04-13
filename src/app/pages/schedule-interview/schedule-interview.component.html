@@ -1,0 +1,16 @@
+<div class="schedule-container" *ngIf="candidate">
+    <h2>Schedule Interview with {{ candidate.name }}</h2>
+  
+    <div class="form-group">
+      <label for="date">Select Date</label>
+      <input id="date" type="date" [(ngModel)]="date" />
+    </div>
+  
+    <div class="form-group">
+      <label for="time">Select Time</label>
+      <input id="time" type="time" [(ngModel)]="time" />
+    </div>
+  
+    <button (click)="submitInterview()">Confirm Interview</button>
+  </div>
+  

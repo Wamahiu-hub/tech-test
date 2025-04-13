@@ -1,0 +1,82 @@
+.dashboard-container {
+    background-color: #f8f1fc;
+    padding: 2rem;
+    border-radius: 8px;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .top-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .left-buttons, .right-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  button.filled {
+    background-color: #00c100;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  button.outlined {
+    background-color: transparent;
+    border: 1px solid #00c100;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  .jobs-section {
+    margin-top: 2rem;
+    background-color: #f2e9fc;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .job-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6eefc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  .job-title {
+    font-weight: bold;
+  }
+  
+  .applicants {
+    color: #888;
+  }
+  
+  .view-link {
+    color: #00c100;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  

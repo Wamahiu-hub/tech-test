@@ -1,0 +1,19 @@
+.performance-container {
+    padding: 1rem;
+    background-color: #f9f5ff;
+    border-radius: 8px;
+    font-family: sans-serif;
+  }
+  .performance-container h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  .performance-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  .performance-container li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  

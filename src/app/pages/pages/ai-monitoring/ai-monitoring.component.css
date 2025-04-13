@@ -1,0 +1,25 @@
+.ai-monitoring-container {
+    padding: 1rem;
+    background-color: #f9f5ff;
+    border-radius: 8px;
+    font-family: sans-serif;
+  }
+  .ai-monitoring-container h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  .ai-monitoring-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .ai-monitoring-container th,
+  .ai-monitoring-container td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  .ai-monitoring-container th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+  }
+  

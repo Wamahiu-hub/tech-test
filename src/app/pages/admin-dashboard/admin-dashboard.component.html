@@ -1,0 +1,72 @@
+<div class="admin-container">
+    <!-- Top Navbar -->
+    <header class="admin-topnav">
+      <div class="logo">SkillMatch AI</div>
+      <nav class="nav-links">
+        <a routerLink="/">Home</a>
+        <a routerLink="/about-us">About Us</a>
+        <a routerLink="/contact-us">Contact Us</a>
+      </nav>
+    </header>
+  
+    <!-- Main content area -->
+    <div class="admin-main">
+      <!-- Side Navigation -->
+      <aside class="admin-sidebar">
+        <h3>Admin Portal</h3>
+        <ul>
+          <li class="active">Dashboard</li>
+          <li>
+            <span [routerLink]="['/user-management']" style="cursor: pointer;">Users</span>
+          </li>
+          <li>
+            <span [routerLink]="['/security']" style="cursor: pointer;">Security</span>
+          </li>
+          <li>
+            <span [routerLink]="['/ai-monitoring']" style="cursor: pointer;">AI Monitoring</span>
+          </li>
+          <li>
+            <span [routerLink]="['/performance']" style="cursor: pointer;">Performance</span>
+          </li>
+        </ul>
+      </aside>
+  
+      <!-- Main Dashboard content (could be static or a placeholder) -->
+      <section class="admin-content">
+        <!-- Your existing dashboard summary content or a welcome message -->
+        <div class="cards-section">
+          <div class="card">
+            <h3>Total Users</h3>
+            <p>2456</p>
+            <span>1.2% this month</span>
+          </div>
+          <div class="card">
+            <h3>AI Accuracy</h3>
+            <p>94%</p>
+            <span>1.5% this month</span>
+          </div>
+          <div class="card">
+            <h3>Security Score</h3>
+            <p>89%</p>
+            <span>2% this month</span>
+          </div>
+          <div class="card">
+            <h3>System Uptime</h3>
+            <p>99.9%</p>
+            <span>Stable</span>
+          </div>
+        </div>
+  
+        <div class="charts-section">
+          <div class="chart">
+            <h4>User Growth</h4>
+            <img src="https://via.placeholder.com/300x200?text=User+Growth+Chart" alt="User Growth Chart" />
+          </div>
+          <div class="chart">
+            <h4>System Metrics</h4>
+            <img src="https://via.placeholder.com/300x200?text=System+Metrics+Chart" alt="System Metrics Chart" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>

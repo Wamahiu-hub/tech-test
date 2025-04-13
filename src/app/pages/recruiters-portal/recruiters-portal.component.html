@@ -1,0 +1,75 @@
+<div class="portal-container">
+    <aside class="sidebar">
+      <h2>Recruiter Portal</h2>
+      <nav>
+        <ul>
+          <li (click)="navigateTo('dashboard')"><span>📊</span> Dashboard</li>
+          <li (click)="navigateTo('job-postings')"><span>📁</span> Job Postings</li>
+          <li (click)="navigateTo('candidates')"><span>👤</span> Candidates</li>
+          <li (click)="navigateTo('ai-chat')"><span>💬</span> AI Chat</li>
+          <li (click)="navigateTo('interviews')"><span>⏰</span> Interviews</li>
+          <li (click)="navigateTo('analytics')"><span>📈</span> Analytics</li>
+          <li><a routerLink="/settings">Settings</a></li>
+          <li><a routerLink="/support">Support</a></li>
+          <li (click)="logout()"><span>🚪</span> Logout</li>
+        </ul>
+      </nav>
+      
+    </aside>
+  
+    <main class="main-content">
+      <header class="top-stats">
+        <div>
+          <p>Active Jobs</p>
+          <h3>45</h3>
+          <small>↑ 5 new this week</small>
+        </div>
+        <div>
+          <p>Total Candidates</p>
+          <h3>1289</h3>
+          <small>↑ 89 new this week</small>
+        </div>
+        <div>
+          <p>Scheduled Interviews</p>
+          <h3>28</h3>
+          <small>↑ 12 this week</small>
+        </div>
+        <div>
+          <p>AI Match Rate</p>
+          <h3>92%</h3>
+          <small>↑ 2% improvement</small>
+        </div>
+      </header>
+  
+      <section class="content-cards">
+        <div class="recent-postings">
+          <h4>Recent Job Postings</h4>
+          <ul>
+            <li>
+              <strong>Senior Frontend Developer</strong>
+              <span>24 matches</span>
+              <p>Remote • 2d ago</p>
+            </li>
+            <li>
+              <strong>Product Manager</strong>
+              <span>18 matches</span>
+              <p>New York • 3d ago</p>
+            </li>
+            <li>
+              <strong>DevOps Engineer</strong>
+              <span>15 matches</span>
+              <p>San Francisco • 1d ago</p>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="candidates-placeholder">
+          <h4>Candidates</h4>
+          <div class="placeholder"></div>
+        </div>
+  
+        <div class="ai-chat-card"><h4>AI Chat</h4></div>
+        <div class="interviews-card"><h4>Interviews</h4></div>
+      </section>
+    </main>
+  </div>
