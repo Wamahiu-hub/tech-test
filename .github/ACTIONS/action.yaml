@@ -1,5 +1,5 @@
-name: 'Deploy the siite to an S3 bucket'
-description: " Deploy the siite to an S3 bucket"
+name: 'Deploy the site to an S3 bucket'
+description: " Deploy the site to an S3 bucket"
 inputs:
   - bucket:
       description: 'the bucket Name'
