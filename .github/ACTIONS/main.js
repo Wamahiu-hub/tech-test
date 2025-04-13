@@ -17,7 +17,7 @@ exec.exec(`aws s3 sync ${distFolder} ${s3URL} ...region ${bucketRegion}`)
 
 
 //GET URL
-const websiteURL = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
+const websiteUrl= `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`
 core.setOutput('website-url', websiteURL);
     
 }
