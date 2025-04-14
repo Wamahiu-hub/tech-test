@@ -90,9 +90,10 @@ import { Router } from '@angular/router';
 
         <!-- Right side: image or illustration -->
         <div class="login-image">
-          <img
-            src="https://via.placeholder.com/400x300.png?text=Login+Image"
-            alt="Login side image"
+    
+          <img 
+            src="IMAGE1.jpg"
+            alt="Person operating a laptop"
           />
         </div>
       </div>

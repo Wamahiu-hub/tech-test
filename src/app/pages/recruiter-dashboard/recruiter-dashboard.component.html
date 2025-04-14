@@ -2,38 +2,87 @@
     <h1>Recruiter Dashboard</h1>
     <p class="subtitle">Manage your job postings and candidate pipeline</p>
   
+    <style>
+          .btn {
+            background-color:#098a16;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+          }
+
+          .btn:hover {
+            background-color: #0056b3;
+          }
+
+          .btn.outlined {
+            background-color: white;
+            color: #007BFF;
+            border: 2px solid #007BFF;
+          }
+
+          .btn.outlined:hover {
+            background-color: #098a16;
+            color: white;
+          }
+
+          .btn.danger {
+            background-color: #DC3545;
+            color: white;
+          }
+
+          .btn.danger:hover {
+            background-color: #a71d2a;
+          }
+
+          .btn.success {
+            background-color: #28A745;
+            color: white;
+          }
+
+          .btn.success:hover {
+            background-color: #1e7e34;
+          }
+
+          .IMS {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+          }
+        </style>
+  
     <div class="top-buttons">
       <div class="left-buttons">
         <button (click)="goToInterviewsDashboard()" class="btn">
             Go to recruiters interviews dashboard
           </button>
           
-        <button (click)="goToAnalytics()" class="outlined">View Analytics</button>
-        <button (click)="goToRecruitersPortal()">Go to recruiters portal page</button>
+        <button (click)="goToAnalytics()" class="btn outlined">View Analytics</button>
+        <button (click)="goToRecruitersPortal()" class="btn">Go to recruiters portal page</button>
 
           
       </div>
       <div class="right-buttons">
-        <button (click)="goToAddJob()">Add Job</button>
+        <button (click)="goToAddJob()" class="btn">Add Job</button>
 
           
-        <button (click)="goToViewCandidates()">View Candidates</button>
+        <button (click)="goToViewCandidates()" class="btn">View Candidates</button>
 
-        <button (click)="goToAIMatches()" class="outlined">View AI Matches</button>
+        <button (click)="goToAIMatches()" class="btn outlined">View AI Matches</button>
       </div>
     </div>
   
     <div class="jobs-section">
-      <h2>Add a job</h2>
-      <div class="job-post">
-        <p class="job-title">UI Designer</p>
-        <p class="applicants">8 applicants</p>
-        <a href="#" class="view-link">View Details</a>
-      </div>
-      <div class="job-post">
-        <p class="job-title">Product Manager</p>
-        <p class="applicants">15 applicants</p>
-        <a href="#" class="view-link">View Details</a>
-      </div>
+    <div>
+      <img class="IMS"  src="wer.jpg" alt="">
     </div>
   </div>

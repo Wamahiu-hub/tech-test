@@ -108,7 +108,7 @@ import { RouterLink } from '@angular/router';
       <footer class="profile-footer">
         <div class="footer-left">
           <h3>SkillMatch AI</h3>
-          <p>Call now: +254 7xxxxxxx</p>
+          <p>Call now: +254 798234543</p>
           <p>© 2023 Job Portal. All Rights Reserved.</p>
         </div>
         <div class="footer-center">

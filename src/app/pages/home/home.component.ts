@@ -58,12 +58,11 @@ import { RouterLink, Router } from '@angular/router';
 
       <!-- FILTERED JOBS SECTION -->
       <section class="filtered-jobs">
-        <h2>Filtered Jobs</h2>
+        <h2>Top Available Jobs</h2>
         <div class="jobs-list">
           <div class="job-card" *ngFor="let job of mockJobs">
             <h3>{{ job.title }}</h3>
             <p>{{ job.description }}</p>
-            <button>Apply Now</button>
           </div>
         </div>
       </section>
