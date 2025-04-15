@@ -93,6 +93,17 @@ import { RouterLink } from '@angular/router';
               [(ngModel)]="mobileNumber"
             />
           </div>
+          <!-- Register as Job Seeker Checkbox -->
+          <div class="form-group">
+            <label>
+              <input
+                type="checkbox"
+                [(ngModel)]="registerAsJobSeeker"
+                name="registerAsJobSeeker"
+              />
+              Register as Job Seeker only
+            </label>
+          </div>
 
           <!-- Updates & Promotions Checkbox -->
           <div class="form-group checkbox-group">
@@ -147,6 +158,7 @@ export class RegisterComponent {
   confirmPassword: string = '';
   mobileNumber: string = '';
   updatesAndPromotions: boolean = false;
+  registerAsJobSeeker: boolean = false;
 
   // This function checks if passwords match
   passwordsMatch(): boolean {
@@ -167,6 +179,7 @@ export class RegisterComponent {
     console.log('Confirm Password:', this.confirmPassword);
     console.log('Mobile Number:', this.mobileNumber);
     console.log('Updates & Promotions:', this.updatesAndPromotions);
+    console.log('Register as Job Seeker:', this.registerAsJobSeeker);
 
     alert('Registration successful! (Simulated)');
   }
