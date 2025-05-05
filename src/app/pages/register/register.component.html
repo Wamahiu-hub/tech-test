@@ -1,0 +1,132 @@
+<div class="register-container">
+  <div class="register-card">
+    <div class="register-header">
+      <h1>Create an Account</h1>
+      <p>Join our platform to find your perfect job or candidate</p>
+    </div>
+
+    <!-- Success or Error Messages -->
+    <div *ngIf="success" class="success-message">{{ success }}</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+
+    <form [formGroup]="form" (ngSubmit)="onRegister()">
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input
+          type="text"
+          id="fullName"
+          formControlName="fullName"
+          placeholder="Enter your full name"
+        />
+        <div *ngIf="f['fullName'].touched && f['fullName'].invalid" class="validation-error">
+          <div *ngIf="f['fullName'].errors?.['required']">Full name is required</div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Enter your email address"
+        />
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="validation-error">
+          <div *ngIf="f['email'].errors?.['required']">Email is required</div>
+          <div *ngIf="f['email'].errors?.['email']">Please enter a valid email address</div>
+          <div *ngIf="f['email'].errors?.['unAllowedEmail']">This email is not allowed</div>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            formControlName="password"
+            placeholder="Create a password"
+          />
+          <button type="button" class="toggle-password" (click)="togglePasswordVisibility('password')">
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="validation-error">
+          <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+          <div *ngIf="f['password'].errors?.['minlength']">Password must be at least 8 characters</div>
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-wrapper">
+          <input
+            [type]="showConfirmPassword ? 'text' : 'password'"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            placeholder="Confirm your password"
+          />
+          <button type="button" class="toggle-password" (click)="togglePasswordVisibility('confirmPassword')">
+            {{ showConfirmPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" class="validation-error">
+          <div *ngIf="f['confirmPassword'].errors?.['required']">Please confirm your password</div>
+        </div>
+        <div *ngIf="form.errors?.['passwordMismatch'] && f['confirmPassword'].touched" class="validation-error">
+          Passwords do not match
+        </div>
+      </div>
+
+      <!-- Role Selection -->
+      <div class="form-group">
+        <label>I am a:</label>
+        <div class="role-selection">
+          <label class="role-option" [class.selected]="form.value.role === '1'">
+            <input type="radio" formControlName="role" value="1" />
+            <span class="role-icon admin-icon">👑</span>
+            <span class="role-name">Admin</span>
+          </label>
+          <label class="role-option" [class.selected]="form.value.role === '2'">
+            <input type="radio" formControlName="role" value="2" />
+            <span class="role-icon recruiter-icon">🏢</span>
+            <span class="role-name">Recruiter</span>
+          </label>
+          <label class="role-option" [class.selected]="form.value.role === '3'">
+            <input type="radio" formControlName="role" value="3" />
+            <span class="role-icon jobseeker-icon">👔</span>
+            <span class="role-name">Job Seeker</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Terms and Conditions -->
+      <div class="form-group terms-container">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="termsAccepted" />
+          <span class="checkmark"></span>
+          <span class="terms-text">
+            I agree to the <a href="/terms" target="_blank">Terms of Service</a> and
+            <a href="/privacy" target="_blank">Privacy Policy</a>
+          </span>
+        </label>
+        <div *ngIf="f['termsAccepted'].touched && f['termsAccepted'].invalid" class="validation-error">
+          You must accept the terms and conditions
+        </div>
+      </div>
+
+      <!-- Register Button -->
+      <button type="submit" class="register-button" [disabled]="form.invalid">
+        Create Account
+      </button>
+
+      <div class="login-link">
+        Already have an account? <a routerLink="/login">Login</a>
+      </div>
+    </form>
+  </div>
+</div>

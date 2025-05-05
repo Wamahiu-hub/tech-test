@@ -1,12 +1,37 @@
-<div class="job-listings">
-    <h2>Posted Jobs</h2>
-    <div *ngIf="jobs.length === 0">No jobs posted yet.</div>
+
+  <div class="portal-container">
+    <aside class="sidebar">
+      <h2>Recruiter Portal</h2>
+      <nav>
+        <ul>
+          <li (click)="navigateTo('dashboard')"><span>📊</span> Dashboard</li>
+          <li (click)="navigateTo('job-postings')"><span>📁</span> Job Postings</li>
+          <li (click)="navigateTo('candidates')"><span>👤</span> Candidates</li>
+          <li (click)="navigateTo('ai-chat')"><span>💬</span> AI Chat</li>
+          <li (click)="navigateTo('interviews')"><span>⏰</span> Interviews</li>
+          <li (click)="navigateTo('analytics')"><span>📈</span> Analytics</li>
+          <li><a routerLink="/settings">Settings</a></li>
+          <li><a routerLink="/support">Support</a></li>
+          <li (click)="logout()"><span>🚪</span> Logout</li>
+        </ul>
+      </nav>
+      
+    </aside>
   
-    <div *ngFor="let job of jobs" class="job-card">
-      <h3>{{ job.title }} &#64; {{ job.company }}</h3>
-      <p><strong>Location:</strong> {{ job.location }}</p>
-      <p><strong>Description:</strong> {{ job.description }}</p>
-      <p><strong>Requirements:</strong> {{ job.requirements }}</p>
+    <main class="main-content">
+       <!-- Add Job Button -->
+    <div class="top-bar">
+      <button class="add-job-button" routerLink="/add-job">➕ Add Job</button>
     </div>
+      <div class="job-listings">
+        <h2>Posted Jobs</h2>
+        <ul *ngIf="recruiterJobs.length > 0">
+          <li class="li" *ngFor="let job of recruiterJobs">
+            <strong>{{ job.title }}</strong> - {{ job.company }} ({{ job.type }})
+          </li>
+        </ul>
+        <p *ngIf="recruiterJobs.length === 0">No jobs posted yet.</p>
+        
+      </div>
+    </main>
   </div>
-  

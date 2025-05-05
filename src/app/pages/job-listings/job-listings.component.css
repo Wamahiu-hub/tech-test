@@ -11,4 +11,95 @@
     border-radius: 8px;
     box-shadow: 0 0 4px rgba(0,0,0,0.1);
   }
+
+  .portal-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf9ff;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: white;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar li.active,
+  .sidebar li:hover {
+    background-color: #e6ffe6;
+    font-weight: bold;
+  }
+  .top-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 20px;
+  }
+  
+  .add-job-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-job-button:hover {
+    background-color: #0056b3;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  .li {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .li:hover {
+    background-color: #e9ecef;
+  }
+  
+  strong {
+    color: #2c3e50;
+    font-size: 1.1rem;
+  }
+  
+  p {
+    font-style: italic;
+    color: #888;
+    margin-top: 1rem;
+    text-align: center;
+  }
   

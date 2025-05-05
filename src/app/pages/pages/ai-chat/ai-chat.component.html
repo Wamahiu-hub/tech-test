@@ -1,1 +1,83 @@
-<p>ai-chat works!</p>
+<div class="portal-container">
+  <aside class="sidebar">
+    <h2 class="logo">RecruiterAI</h2>
+    <nav>
+      <ul>
+        <li routerLink="/recruiters-portal" routerLinkActive="active">
+          <i class="icon dashboard"></i>Dashboard
+        </li>
+        <li routerLink="/job-listings" routerLinkActive="active">
+          <i class="icon jobs"></i>Job Postings
+        </li>
+        <li routerLink="/view-candidates" routerLinkActive="active">
+          <i class="icon candidates"></i>Candidates
+        </li>
+        <li routerLink="/ai-chat" routerLinkActive="active">
+          <i class="icon chat"></i>AI Assistant
+        </li>
+        <li routerLink="/recruiter-interviews-dashboard" routerLinkActive="active">
+          <i class="icon interviews"></i>Interviews
+        </li>
+        <li routerLink="/analytics" routerLinkActive="active">
+          <i class="icon analytics"></i>Analytics
+        </li>
+        <li class="divider"></li>
+        <li routerLink="/settings" routerLinkActive="active">
+          <i class="icon settings"></i>Settings
+        </li>
+        <li routerLink="/support" routerLinkActive="active">
+          <i class="icon support"></i>Support
+        </li>
+        <li class="logout" (click)="logout()">
+          <i class="icon logout"></i>Log Out
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="chat-main">
+    <div class="chat-container">
+      <div class="chat-header">
+        <h1>AI Recruiting Assistant</h1>
+        <p class="subtitle">How can I help you today?</p>
+      </div>
+
+      <div #messagesContainer class="chat-messages">
+        <div *ngFor="let message of messages" 
+             [class]="'message ' + message.sender"
+             [class.loading]="message.loading">
+          
+          <div class="avatar" [class.ai]="message.sender === 'ai'">
+            <span *ngIf="message.sender === 'user'">👤</span>
+            <span *ngIf="message.sender === 'ai'">🤖</span>
+          </div>
+
+          <div class="content">
+            <div *ngIf="!message.loading" class="text" [innerHTML]="message.text"></div>
+            <div *ngIf="message.loading" class="loading-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="timestamp">{{ message.timestamp | date:'shortTime' }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <input
+          type="text"
+          [(ngModel)]="userInput"
+          (keyup.enter)="sendMessage()"
+          placeholder="Ask about candidates, job descriptions, or hiring strategies..."
+          [disabled]="isSending"
+        />
+        <button (click)="sendMessage()" [disabled]="!userInput || isSending">
+          <span *ngIf="!isSending">Send</span>
+          <span *ngIf="isSending">Sending...</span>
+          <svg class="send-icon" viewBox="0 0 24 24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+</div>

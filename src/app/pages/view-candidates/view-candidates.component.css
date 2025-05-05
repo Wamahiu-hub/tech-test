@@ -31,4 +31,126 @@
   .nav-buttons button:hover {
     background-color: #0056b3;
   }
+  .portal-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf9ff;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: white;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  }
+  .portal-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf9ff;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: white;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar li.active,
+  .sidebar li:hover {
+    background-color: #e6ffe6;
+    font-weight: bold;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar li.active,
+  .sidebar li:hover {
+    background-color: #e6ffe6;
+    font-weight: bold;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  thead {
+    background-color: #1f2937; /* dark gray */
+    color: #fff;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 12px 8px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  tbody tr:hover {
+    background-color: #f3f4f6;
+  }
+  
+  a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  button {
+    padding: 6px 12px;
+    background-color: #10b981;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #059669;
+  }
   

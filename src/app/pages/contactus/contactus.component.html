@@ -1,0 +1,27 @@
+<div class="contact-us">
+    <h1>Contact Us</h1>
+    <p>We're here to help! If you have any questions, suggestions, or feedback, feel free to reach out to us.</p>
+  
+    <form (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm">
+      <label>
+        Name:
+        <input type="text" [(ngModel)]="name" name="name" required #nameInput="ngModel" />
+        <div *ngIf="nameInput.invalid && nameInput.touched" class="error">Name is required</div>
+      </label>
+  
+      <label>
+        Email:
+        <input type="email" [(ngModel)]="email" name="email" required #emailInput="ngModel" />
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="error">Valid email is required</div>
+      </label>
+  
+      <label>
+        Message:
+        <textarea [(ngModel)]="message" name="message" rows="5" required #messageInput="ngModel"></textarea>
+        <div *ngIf="messageInput.invalid && messageInput.touched" class="error">Message is required</div>
+      </label>
+  
+      <button type="submit" [disabled]="contactForm.invalid">Send</button>
+    </form>
+  </div>
+  

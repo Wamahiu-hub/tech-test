@@ -6,6 +6,7 @@ import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { FormsModule } from '@angular/forms';
+import { appConfig } from './app/app.config';
 
 if (environment.production) {
   enableProdMode();
@@ -13,6 +14,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
+    ...appConfig.providers,
     provideRouter(routes),
     importProvidersFrom(FormsModule)
   ]

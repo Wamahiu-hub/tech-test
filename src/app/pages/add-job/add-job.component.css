@@ -1,32 +1,112 @@
-.add-job-container {
-    max-width: 600px;
-    margin: auto;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+/* Add Job Form Container */
+.add-job-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Header Style */
+.add-job-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input & Textarea Styles */
+.add-job-form input,
+.add-job-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Input/textarea hover and focus effect */
+.add-job-form input:focus,
+.add-job-form textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Placeholder Text */
+.add-job-form input::placeholder,
+.add-job-form textarea::placeholder {
+  color: #888;
+}
+
+/* Submit Button Styles */
+.add-job-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Submit Button Hover */
+.add-job-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .add-job-form {
+    padding: 15px;
   }
-  
-  form label {
-    display: block;
-    margin: 1rem 0 0.5rem;
-    font-weight: bold;
+
+  .add-job-form input,
+  .add-job-form textarea,
+  .add-job-form button {
+    font-size: 14px;
   }
-  
-  input, textarea {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-  }
-  
-  button {
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    cursor: pointer;
-    background: #005ce6;
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  
+}
+.portal-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf9ff;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: white;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background-color: #e6ffe6;
+  font-weight: bold;
+}

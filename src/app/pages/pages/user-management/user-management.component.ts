@@ -1,70 +1,62 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AdminSidebarComponent } from "../../admin-sidebar/admin-sidebar.component";
+import { ApiService } from '../../../services/api.service';
+//import { isAxiosError } from 'axios';;
 
 @Component({
   selector: 'app-user-management',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, AdminSidebarComponent],
   templateUrl: './user-management.component.html',
   styleUrls: ['./user-management.component.css']
 })
 export class UserManagementComponent {
-  users = [
-    {
-      name: 'Sarah Johnson',
-      email: 'sarahj@example.com',
-      role: 'Admin',
-      status: 'Active',
-      lastLogin: '2024-04-20 09:45 AM',
-    },
-    {
-      name: 'Michael Chen',
-      email: 'michaelc@example.com',
-      role: 'Editor',
-      status: 'Active',
-      lastLogin: '2024-05-19 10:32 AM',
-    },
-    {
-      name: 'Emma Davis',
-      email: 'emma.d@example.com',
-      role: 'Viewer',
-      status: 'Inactive',
-      lastLogin: '2024-03-02 04:12 PM',
-    },
-    {
-      name: 'James Wilson',
-      email: 'james.w@example.com',
-      role: 'Editor',
-      status: 'Active',
-      lastLogin: '2024-03-10 07:55 PM',
-    },
-    {
-      name: 'Lisa Brown',
-      email: 'lisab@example.com',
-      role: 'Viewer',
-      status: 'Active',
-      lastLogin: '2024-02-28 09:11 AM',
-    },
-  ];
+  constructor(private apiService: ApiService){}
+  users: any[] = [];
+
+  ngOnInit() {
+    this.getUsers(); 
+  }
+
+  // Fetch user data from the backend API
+  async getUsers() {
+    try {
+      this.users = await this.apiService.getUsers(); 
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  }
+
+  // Edit action
+  onEdit(user: any) {
+    console.log('Editing user:', user);
+    
+  }
+
+  // Delete action
+  async onDelete(user: any) {
+    if (confirm('Are you sure you want to delete this user?')) {
+      try {
+        await this.apiService.deleteUser(user.id); 
+        this.users = this.users.filter((u) => u.id !== user.id);
+      } catch (error) {
+        console.error('Error deleting user:', error);
+      }
+    }
+  }
 
   showAddUserModal: boolean = false;
-  newUser: any = {
+  
+ recruiter = {
     name: '',
     email: '',
-    role: 'Viewer',
-    status: 'Active',
+    password: '',
+    status: 'active'
   };
 
-  onEdit(user: any) {
-    console.log('Edit user:', user);
-    // To be implemented: modal or route to edit user
-  }
-
-  onDelete(user: any) {
-    console.log('Delete user:', user);
-    // To be implemented: delete confirmation and logic
-  }
+  
 
   addNewUser() {
     this.showAddUserModal = true;
@@ -72,23 +64,29 @@ export class UserManagementComponent {
 
   closeAddUserModal() {
     this.showAddUserModal = false;
-    this.newUser = {
+    this.recruiter = {
       name: '',
       email: '',
-      role: 'Viewer',
-      status: 'Active',
+      password: '',
+      status: 'active'
     };
   }
-
-  submitNewUser() {
-    if (this.newUser.name && this.newUser.email) {
-      this.users.push({
-        ...this.newUser,
-        lastLogin: 'Never',
-      });
-      this.closeAddUserModal();
-    } else {
-      alert('Please fill in all required fields.');
+    async addRecruiter() {
+      try {
+        const response = await this.apiService.addRecruiter(this.recruiter);
+        console.log('Recruiter added:', response.data);
+        alert('Recruiter added successfully!');
+        this.recruiter = { name: '', email: '', password: '', status: 'active' };
+      } catch (error) {
+        console.error('Error adding recruiter:', error);
+        // if (isAxiosError(error)) {
+        //   console.log('Axios error details:', (error as any).response);
+        //   const axiosError = error as axios.AxiosError;
+        //   alert(axiosError.response?.data?.message || 'Something went wrong!');
+        // } else {
+        //   alert('Something went wrong!');
+        // }
+      }      
     }
-  }
+  
 }

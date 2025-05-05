@@ -1,32 +1,34 @@
-<div class="add-job-container">
-    <h2>Post a New Job</h2>
-    <form (ngSubmit)="submitJob()" #jobForm="ngForm">
-      <label>
-        Job Title:
-        <input type="text" [(ngModel)]="job.title" name="title" required />
-      </label>
-  
-      <label>
-        Company:
-        <input type="text" [(ngModel)]="job.company" name="company" required />
-      </label>
-  
-      <label>
-        Location:
-        <input type="text" [(ngModel)]="job.location" name="location" required />
-      </label>
-  
-      <label>
-        Description:
-        <textarea [(ngModel)]="job.description" name="description" required></textarea>
-      </label>
-  
-      <label>
-        Requirements:
-        <textarea [(ngModel)]="job.requirements" name="requirements" required></textarea>
-      </label>
-  
-      <button type="submit" [disabled]="!jobForm.form.valid">Submit Job</button>
-    </form>
-  </div>
-  
+<div class="portal-container">
+  <aside class="sidebar">
+    <h2>Recruiter Portal</h2>
+    <nav>
+      <ul>
+        <li (click)="navigateTo('dashboard')"><span>📊</span> Dashboard</li>
+        <li (click)="navigateTo('job-postings')"><span>📁</span> Job Postings</li>
+        <li (click)="navigateTo('candidates')"><span>👤</span> Candidates</li>
+        <li (click)="navigateTo('ai-chat')"><span>💬</span> AI Chat</li>
+        <li (click)="navigateTo('interviews')"><span>⏰</span> Interviews</li>
+        <li (click)="navigateTo('analytics')"><span>📈</span> Analytics</li>
+        <li><a routerLink="/settings">Settings</a></li>
+        <li><a routerLink="/support">Support</a></li>
+        <li (click)="logout()"><span>🚪</span> Logout</li>
+      </ul>
+    </nav>
+    
+  </aside>
+
+  <main class="main-content">
+<div class="add-job-form">
+  <h2>Post a New Job</h2>
+
+  <input [(ngModel)]="title" placeholder="Job Title">
+  <input [(ngModel)]="company" placeholder="Company">
+  <input [(ngModel)]="location" placeholder="Location">
+  <textarea [(ngModel)]="description" placeholder="Job Description"></textarea>
+  <input [(ngModel)]="industry" placeholder="Industry">
+  <textarea [(ngModel)]="requirements" placeholder="Requirements"></textarea>
+  <input [(ngModel)]="type" placeholder="Full-time / Part-time">
+
+  <button (click)="postJob()">Submit</button>
+</div>
+</main></div>

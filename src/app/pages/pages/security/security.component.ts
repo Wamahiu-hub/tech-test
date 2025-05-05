@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-security',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AdminSidebarComponent],
   templateUrl: './security.component.html',
   styleUrls: ['./security.component.css']
 })
@@ -19,3 +19,4 @@ export class SecurityComponent {
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { AdminSidebarComponent } from "../../admin-sidebar/admin-sidebar.component";

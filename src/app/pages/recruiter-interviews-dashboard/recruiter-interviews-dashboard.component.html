@@ -1,3 +1,23 @@
+<div class="portal-container">
+  <aside class="sidebar">
+    <h2>Recruiter Portal</h2>
+    <nav>
+      <ul>
+        <li (click)="navigateTo('dashboard')"><span>📊</span> Dashboard</li>
+        <li (click)="navigateTo('job-postings')"><span>📁</span> Job Postings</li>
+        <li (click)="navigateTo('candidates')"><span>👤</span> Candidates</li>
+        <li (click)="navigateTo('ai-chat')"><span>💬</span> AI Chat</li>
+        <li (click)="navigateTo('interviews')"><span>⏰</span> Interviews</li>
+        <li (click)="navigateTo('analytics')"><span>📈</span> Analytics</li>
+        <li><a routerLink="/settings">Settings</a></li>
+        <li><a routerLink="/support">Support</a></li>
+        <li (click)="logout()"><span>🚪</span> Logout</li>
+      </ul>
+    </nav>
+    
+  </aside>
+
+  <main class="main-content">
 <div class="interview-dashboard">
     <h2>Interviews Dashboard</h2>
   
@@ -28,4 +48,5 @@
       </div>
     </div>
   </div>
-  
+</main>
+</div>

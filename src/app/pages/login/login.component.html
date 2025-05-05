@@ -1,11 +1,111 @@
-
-<!-- login.component.html -->
 <div class="login-container">
-    <!-- your username and password fields -->
-    <input type="text" [(ngModel)]="username" placeholder="Username" />
-    <input type="password" [(ngModel)]="password" placeholder="Password" />
-  
-    <!-- Login button for Admin -->
-    <button (click)="onLogin()">Login as Admin</button>
+  <div class="login-card">
+    <div class="login-content">
+      <!-- Left side: login form -->
+      <div class="login-form">
+        <h1>Welcome Back</h1>
+        <p class="subtitle">Please login to your account</p>
+        
+        <!-- Error message display -->
+        <div class="error-message" *ngIf="loginError">
+          {{ loginError }}
+        </div>
+        
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <!-- Email Input -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder="Enter your email"
+              required
+            />
+            <div class="validation-error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+              Please enter a valid email address
+            </div>
+          </div>
+          
+          <!-- Password Input -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+              <input
+                id="password"
+                [type]="showPassword ? 'text' : 'password'"
+                formControlName="password"
+                placeholder="Enter your password"
+                required
+              />
+              <button type="button" class="toggle-password" (click)="togglePassword()">
+                {{ showPassword ? 'Hide' : 'Show' }}
+              </button>
+            </div>
+            <div class="validation-error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+              Password is required
+            </div>
+          </div>
+          
+          <!-- User Role Selection -->
+          <div class="form-group role-selection">
+            <label>Login as:</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input
+                  type="radio"
+                  name="userRole"
+                  [value]="'Admin'"
+                  formControlName="userRole"
+                />
+                <span class="radio-text">Admin</span>
+              </label>
+              <label class="radio-label">
+                <input
+                  type="radio"
+                  name="userRole"
+                  [value]="'Job Seeker'"
+                  formControlName="userRole"
+                />
+                <span class="radio-text">Job Seeker</span>
+              </label>
+              <label class="radio-label">
+                <input
+                  type="radio"
+                  name="userRole"
+                  [value]="'Recruiter'"
+                  formControlName="userRole"
+                />
+                <span class="radio-text">Recruiter</span>
+              </label>
+            </div>
+          </div>
+          
+          <!-- Remember Me and Forgot Password -->
+          <div class="form-group remember-forgot">
+            <label class="remember-me">
+              <input type="checkbox" formControlName="rememberMe" />
+              <span>Remember me</span>
+            </label>
+            <a routerLink="/forgot-password" class="forgot-password">Forgot Password?</a>
+          </div>
+          
+          <!-- Submit Button -->
+          <button type="submit" class="login-button" [disabled]="loginForm.invalid">
+            Login
+          </button>
+          
+          <!-- Register Link -->
+          <p class="register-link">
+            Don't have an account? <a routerLink="/register">Register here</a>
+          </p>
+        </form>
+      </div>
+      
+      <!-- Right side: image -->
+      <div class="login-image">
+        <img src="assets/images/IMAGE1.jpg" alt="Person operating a laptop" />
+      </div>
+    </div>
   </div>
-  
+</div>

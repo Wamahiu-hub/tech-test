@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AdminSidebarComponent } from "../../admin-sidebar/admin-sidebar.component";
 
 @Component({
   selector: 'app-performance',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AdminSidebarComponent],
   templateUrl: './performance.component.html',
   styleUrls: ['./performance.component.css']
 })

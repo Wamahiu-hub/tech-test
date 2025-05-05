@@ -1,19 +1,52 @@
+.admin-main {
+  display: flex;
+  flex-direction: row;
+}
+
+app-admin-sidebar {
+  flex: 0 0 250px; /* fixed width for the sidebar */
+}
+
+.admin-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
 .security-container {
-    padding: 1rem;
-    background-color: #f9f5ff;
-    border-radius: 8px;
-    font-family: sans-serif;
-  }
-  .security-container h2 {
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  .security-container ul {
-    list-style: none;
-    padding: 0;
-  }
-  .security-container li {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-  }
-  
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.security-container h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.security-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.security-container li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  color: #333;
+}
+
+.security-container li:last-child {
+  border-bottom: none;
+}
+
+.security-container strong {
+  color: #000;
+  margin-right: 6px;
+}

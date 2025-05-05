@@ -1,0 +1,186 @@
+<div class="auth-container">
+    <div class="tabs">
+      <button [class.active]="isLoginView" (click)="toggleView()">Login</button>
+      <button [class.active]="!isLoginView" (click)="toggleView()">Register</button>
+    </div>
+  
+    <!-- Login Form -->
+    <div *ngIf="isLoginView" class="form-container">
+      <h2>Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <!-- Email field -->
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input
+            type="email"
+            id="login-email"
+            formControlName="email"
+            placeholder="Enter your email"
+          />
+          <div *ngIf="loginControls.email.touched && loginControls.email.invalid" class="error-message">
+            <span *ngIf="loginControls.email.errors?.['required']">Email is required</span>
+            <span *ngIf="loginControls.email.errors?.['email']">Enter a valid email</span>
+          </div>
+        </div>
+  
+        <!-- Password field -->
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <div class="password-input">
+            <input
+              [type]="loginShowPassword ? 'text' : 'password'"
+              id="login-password"
+              formControlName="password"
+              placeholder="Enter your password"
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              (click)="togglePasswordVisibility('login', 'password')"
+            >
+              {{ loginShowPassword ? 'Hide' : 'Show' }}
+            </button>
+          </div>
+          <div *ngIf="loginControls.password.touched && loginControls.password.invalid" class="error-message">
+            <span *ngIf="loginControls.password.errors?.['required']">Password is required</span>
+          </div>
+        </div>
+  
+        <!-- Role selection -->
+        <div class="form-group">
+          <label>Login as:</label>
+          <div class="role-selector">
+            <label *ngFor="let roleOption of roles" class="role-option">
+              <input type="radio" formControlName="role" [value]="roleOption" />
+              {{ roleOption }}
+            </label>
+          </div>
+        </div>
+  
+        <!-- Success/Error messages -->
+        <div *ngIf="success" class="success-message">{{ success }}</div>
+        <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+        <!-- Form buttons -->
+        <div class="form-buttons">
+          <button type="submit" [disabled]="loginForm.invalid" class="primary-button">Login</button>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Register Form -->
+    <div *ngIf="!isLoginView" class="form-container">
+      <h2>Register</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <!-- Full Name field -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            formControlName="fullName"
+            placeholder="Enter your full name"
+          />
+          <div *ngIf="registerControls.fullName.touched && registerControls.fullName.invalid" class="error-message">
+            <span *ngIf="registerControls.fullName.errors?.['required']">Full name is required</span>
+          </div>
+        </div>
+  
+        <!-- Email field -->
+        <div class="form-group">
+          <label for="reg-email">Email</label>
+          <input
+            type="email"
+            id="reg-email"
+            formControlName="email"
+            placeholder="Enter your email"
+          />
+          <div *ngIf="registerControls.email.touched && registerControls.email.invalid" class="error-message">
+            <span *ngIf="registerControls.email.errors?.['required']">Email is required</span>
+            <span *ngIf="registerControls.email.errors?.['email']">Enter a valid email</span>
+            <span *ngIf="registerControls.email.errors?.['unAllowedEmail']">This email is not allowed</span>
+          </div>
+        </div>
+  
+        <!-- Password field -->
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <div class="password-input">
+            <input
+              [type]="regShowPassword ? 'text' : 'password'"
+              id="reg-password"
+              formControlName="password"
+              placeholder="Enter your password"
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              (click)="togglePasswordVisibility('register', 'password')"
+            >
+              {{ regShowPassword ? 'Hide' : 'Show' }}
+            </button>
+          </div>
+          <div *ngIf="registerControls.password.touched && registerControls.password.invalid" class="error-message">
+            <span *ngIf="registerControls.password.errors?.['required']">Password is required</span>
+            <span *ngIf="registerControls.password.errors?.['minlength']">Password must be at least 8 characters</span>
+          </div>
+        </div>
+  
+        <!-- Confirm Password field -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="password-input">
+            <input
+              [type]="regShowConfirmPassword ? 'text' : 'password'"
+              id="confirmPassword"
+              formControlName="confirmPassword"
+              placeholder="Confirm your password"
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              (click)="togglePasswordVisibility('register', 'confirmPassword')"
+            >
+              {{ regShowConfirmPassword ? 'Hide' : 'Show' }}
+            </button>
+          </div>
+          <div *ngIf="registerControls.confirmPassword.touched && registerControls.confirmPassword.invalid" class="error-message">
+            <span *ngIf="registerControls.confirmPassword.errors?.['required']">Please confirm your password</span>
+          </div>
+          <div *ngIf="registerForm.errors?.['passwordMismatch'] && registerControls.confirmPassword.touched" class="error-message">
+            Passwords do not match
+          </div>
+        </div>
+  
+        <!-- Role selection -->
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select id="role" formControlName="role">
+            <option value="3">Job Seeker</option>
+            <option value="2">Recruiter</option>
+            <option value="1">Admin</option>
+          </select>
+        </div>
+  
+        <!-- Terms and conditions -->
+        <div class="form-group checkbox">
+          <label>
+            <input type="checkbox" formControlName="termsAccepted" />
+            I agree to the terms and conditions
+          </label>
+          <div *ngIf="registerControls.termsAccepted.touched && registerControls.termsAccepted.invalid" class="error-message">
+            You must accept the terms and conditions
+          </div>
+        </div>
+  
+        <!-- Success/Error messages -->
+        <div *ngIf="success" class="success-message">{{ success }}</div>
+        <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+        <!-- Form buttons -->
+        <div class="form-buttons">
+          <button type="submit" [disabled]="registerForm.invalid" class="primary-button">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>

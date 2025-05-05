@@ -1,147 +1,195 @@
-.user-management-container {
-    background-color: #f9f5ff;
-    padding: 1rem;
-    border-radius: 8px;
-    font-family: sans-serif;
-  }
-  
-  .header-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .header-bar h2 {
-    margin: 0;
-  }
-  
-  .header-bar button {
-    background-color: #00b894;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .search-bar {
-    margin-bottom: 1rem;
-  }
-  
-  .search-bar input {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  thead {
-    background-color: #f2f2f2;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 0.75rem;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    font-weight: 600;
-    color: #333;
-  }
-  
-  td a {
-    color: #0984e3;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .active-status {
-    background-color: #dff0d8;
-    color: #2d7f20;
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
-  
-  .inactive-status {
-    background-color: #f8d7da;
-    color: #a71d2a;
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
+.admin-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-  /* Modal styles */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .modal-content h3 {
-    margin-top: 0;
-    font-size: 1.5em;
-    color: #333;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-  }
-  
-  button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-  }
-  
-  button[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  button[type="button"] {
-    background-color: #f44336;
-    color: white;
-    margin-left: 10px;
-  }
+.admin-main {
+  display: flex;
+  flex: 1;
+  background-color: #f5f7fa;
+  overflow: hidden;
+}
+
+app-admin-sidebar {
+  flex: 0 0 250px;
+  height: 100%;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.user-management-container {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header-bar h2 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.header-bar button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.header-bar button:hover {
+  background-color: #0056b3;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+table td {
+  font-size: 14px;
+}
+
+.active-status {
+  color: green;
+  font-weight: 600;
+}
+
+.inactive-status {
+  color: red;
+  font-weight: 600;
+}
+
+table a {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  margin-right: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal-content button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.modal-content button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-content button[type="button"]:hover {
+  background-color: #c82333;
+}
+.active-status {
+  color: green;
+}
+
+.inactive-status {
+  color: red;
+}
+

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AdminSidebarComponent } from "../../admin-sidebar/admin-sidebar.component";
 
 @Component({
   selector: 'app-ai-monitoring',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AdminSidebarComponent],
   templateUrl: './ai-monitoring.component.html',
   styleUrls: ['./ai-monitoring.component.css']
 })

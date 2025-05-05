@@ -1,35 +1,10 @@
 <div class="admin-container">
     <!-- Top Navbar -->
-    <header class="admin-topnav">
-      <div class="logo">SkillMatch AI</div>
-      <nav class="nav-links">
-        <a routerLink="/">Home</a>
-        <a routerLink="/about-us">About Us</a>
-        <a routerLink="/contact-us">Contact Us</a>
-      </nav>
-    </header>
-  
+    
     <!-- Main content area -->
     <div class="admin-main">
       <!-- Side Navigation -->
-      <aside class="admin-sidebar">
-        <h3>Admin Portal</h3>
-        <ul>
-          <li class="active">Dashboard</li>
-          <li>
-            <span [routerLink]="['/user-management']" style="cursor: pointer;">Users</span>
-          </li>
-          <li>
-            <span [routerLink]="['/security']" style="cursor: pointer;">Security</span>
-          </li>
-          <li>
-            <span [routerLink]="['/ai-monitoring']" style="cursor: pointer;">AI Monitoring</span>
-          </li>
-          <li>
-            <span [routerLink]="['/performance']" style="cursor: pointer;">Performance</span>
-          </li>
-        </ul>
-      </aside>
+     <app-admin-sidebar></app-admin-sidebar>
   
       <!-- Main Dashboard content (could be static or a placeholder) -->
       <section class="admin-content">

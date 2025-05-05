@@ -1,42 +1,45 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { InterviewService } from '../../services/interview.service';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-schedule-interview',
+  imports:[FormsModule, CommonModule],
   templateUrl: './schedule-interview.component.html',
-  imports: [CommonModule, FormsModule],
-  styleUrls: ['./schedule-interview.component.css']
+  styleUrls: ['./schedule-interview.component.css'],
 })
-export class ScheduleInterviewComponent {
-  candidate: any = null;
-  date: string = '';
-  time: string = '';
+export class ScheduleInterviewComponent implements OnInit {
+  selectedApplicant: any; // This will hold the selected applicant data
+  interviewDate: string = ''; // Bound to the date input
+  interviewTime: string = ''; // Bound to the time input
 
-  constructor(
-    private router: Router,
-    private interviewService: InterviewService
-  ) {
-    const nav = this.router.getCurrentNavigation();
-    this.candidate = nav?.extras?.state?.['candidate'];
+  constructor(private api: ApiService) {}
+
+  ngOnInit(): void {
+    // Initialize the selected applicant from some service or route parameter
+    // For example, here we assume selectedApplicant comes from a route parameter or from the list of applicants
+    // this.selectedApplicant = this.api.getSelectedApplicant();  // You can modify this to get your actual selected applicant
   }
 
-  submitInterview() {
-    if (this.date && this.time && this.candidate) {
-      const interview = {
-        candidate: this.candidate,
-        date: this.date,
-        time: this.time,
-        scheduledAt: new Date()
-      };
-
-      this.interviewService.scheduleInterview(interview);
-      alert(`Interview scheduled with ${this.candidate.name} on ${this.date} at ${this.time}`);
-      this.router.navigate(['/recruiter-interviews-dashboard']);
-    } else {
-      alert('Please select both date and time.');
+  scheduleInterview(app: any) {
+    if (!this.interviewDate || !this.interviewTime) {
+      alert('Please select both date and time for the interview.');
+      return;
     }
+
+    // Prepare the data to be sent to the backend or simply alert for now
+    alert(`Scheduling interview with ${app.full_name} for the job: ${app.job_title}
+           on ${this.interviewDate} at ${this.interviewTime}.`);
+
+    // Example API POST call to schedule the interview in the backend
+    // this.api.scheduleInterview(app.id, this.interviewDate, this.interviewTime)
+    //   .then(response => {
+    //     alert("Interview scheduled successfully!");
+    //   })
+    //   .catch(err => {
+    //     console.error("Error scheduling interview:", err);
+    //     alert("Failed to schedule interview.");
+    //   });
   }
 }

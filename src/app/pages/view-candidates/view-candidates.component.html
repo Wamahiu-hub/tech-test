@@ -1,15 +1,46 @@
+<div class="portal-container">
+  <aside class="sidebar">
+    <h2>Recruiter Portal</h2>
+    <nav>
+      <ul>
+        <li (click)="navigateTo('dashboard')"><span>📊</span> Dashboard</li>
+        <li (click)="navigateTo('job-postings')"><span>📁</span> Job Postings</li>
+        <li (click)="navigateTo('candidates')"><span>👤</span> Candidates</li>
+        <li (click)="navigateTo('ai-chat')"><span>💬</span> AI Chat</li>
+        <li (click)="navigateTo('interviews')"><span>⏰</span> Interviews</li>
+        <li (click)="navigateTo('analytics')"><span>📈</span> Analytics</li>
+        <li><a routerLink="/settings">Settings</a></li>
+        <li><a routerLink="/support">Support</a></li>
+        <li (click)="logout()"><span>🚪</span> Logout</li>
+      </ul>
+    </nav>
+    
+  </aside>
+
+  <main class="main-content">
 <div class="candidates-container">
-    <h2>Candidate Applications</h2>
-
-    <div class="nav-buttons">
-        <button (click)="goToDashboard()">← Back to Dashboard</button>
-        <button (click)="goHome()">🏠 Go to Home</button>
-      </div>
-
-    <div *ngFor="let candidate of candidates" class="candidate-card">
-      <h3>{{ candidate.name }}</h3>
-      <p><strong>Email:</strong> {{ candidate.email }}</p>
-      <p><strong>Skills:</strong> {{ candidate.skills }}</p>
-    </div>
-  </div>
+  <h2>Applicants</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Job Title</th>
+        <th>CV</th>
+        <th>Interview</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let app of applications">
+        <td>{{ app.full_name }}</td>
+        <td>{{ app.email }}</td>
+        <td>{{ app.job_title }}</td>
+        <td><a [href]="'http://localhost:5000/uploads/' + app.cv_path" target="_blank">Download CV</a></td>
+        <td><button (click)="scheduleInterview(app)">Schedule</button></td>
+      </tr>
+    </tbody>
+  </table>
   
+  </div>
+</main>
+</div>

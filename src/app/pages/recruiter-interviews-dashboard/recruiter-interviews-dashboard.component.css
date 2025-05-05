@@ -98,4 +98,43 @@
     border-radius: 10px;
     background-color: #f9f9f9;
   }
+  .portal-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf9ff;
+  }
   
+  .sidebar {
+    width: 220px;
+    background-color: white;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar li.active,
+  .sidebar li:hover {
+    background-color: #e6ffe6;
+    font-weight: bold;
+  }
